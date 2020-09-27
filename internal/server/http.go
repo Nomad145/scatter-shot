@@ -25,8 +25,8 @@ func NewHttpServer(port string, storage *storage.Storage) *HttpServer {
 func (server HttpServer) Start() {
 	fmt.Printf("Starting the HTTP Server on port %s...\n", server.port)
 
-	http.HandleFunc("/file", server.postHandler)
-	http.HandleFunc("/files/", server.getHandler)
+	http.HandleFunc("/upload", server.postHandler)
+	http.HandleFunc("/view/", server.getHandler)
 	http.ListenAndServe(fmt.Sprintf(":%s", server.port), nil)
 }
 

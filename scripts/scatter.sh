@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILE=`realpath $1`
-RESPONSE=`curl -F file=@$FILE https://scrots.michaelphillips.dev/file`
+RESPONSE=`curl -F file=@$FILE https://files.michaelphillips.dev/upload`
 FILENAME=`echo $RESPONSE | jq -r ".Name"`
 
-echo "https://scrots.michaelphillips.dev/files/$FILENAME" | xclip -selection c
+echo "https://files.michaelphillips.dev/view/$FILENAME" | xclip -selection c
